@@ -19,9 +19,9 @@ npm run serve
 wasm-pack build --target bundler
 npm run serve
 ```
-
-![Image One](./screenshots/3d-cube-one.jpg)
-![Image Two](./screenshots/3d-cube-three.jpg)
-![Image Three](./screenshots/3d-cube-two.jpg)
-![Image Four](./screenshots/3d-cuboidal-one.jpg)
-![Image Five](./screenshots/3d-cuboidal.jpg)
+![Video One](./views/Trial-3d-Rust.mp4)
+![Image One](./views/3d-cube-one.jpg)
+![Image Two](./views/3d-cube-three.jpg)
+![Image Three](./views/3d-cube-two.jpg)
+![Image Four](./views/3d-cuboidal-one.jpg)
+![Image Five](./views/3d-cuboidal.jpg)
