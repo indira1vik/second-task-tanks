@@ -19,7 +19,7 @@ npm run serve
 wasm-pack build --target bundler
 npm run serve
 ```
-![Video One](./views/Trial-3d-Rust.mp4)
+
 ![Image One](./views/3d-cube-one.jpg)
 ![Image Two](./views/3d-cube-three.jpg)
 ![Image Three](./views/3d-cube-two.jpg)
