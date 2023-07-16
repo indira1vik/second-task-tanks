@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Company Name</title>
+</head>
+<body>
+    <header style="width: 100%;background-color: black;">
+        <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+            <div class="container">
+                <span class="navbar-brand mb-0 h1">Company Name</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="tankimg">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="container ipt-total">
+            <div class="ipt">
+                <div class="title">Enter structure</div>
+                <select id="mySelect" class="form-select">
+                    <option selected>Select Structure</option>
+                    <option value="sphere">Sphere</option>
+                    <option value="cylinder">Cylinder</option>
+                    <option value="cube">Cube</option>
+                    <option value="cuboidal">Cuboidal</option>
+                </select>
+            </div>
+            <div class="ipt">
+                <div class="title">Enter liquid level</div>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" min="0" placeholder="Ex. 1400 (in mm)" aria-label="Ex. 1400 (in mm)"
+                        aria-describedby="button-addon2" id="fluid">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">View Tank</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+</body>
+</html>
