@@ -1,10 +1,16 @@
 use three_d::renderer::Gm;
 use three_d::*;
 
+#[allow(unused_imports)]
 use self::cuboid::cuboid;
+#[allow(unused_imports)]
+use self::cube::cube;
 
 #[path = "./tank/cuboid.rs"]
 mod cuboid;
+
+#[path = "./tank/cube.rs"]
+mod cube;
 
 #[allow(dead_code)]
 pub fn main() {
@@ -33,7 +39,7 @@ pub fn main() {
 
     let mut control = OrbitControl::new(*camera.target(), 1.0, 100.0);
 
-    let fl_ht = 1.2;
+    let fl_ht = 1.85;
     let choose = if fl_ht >= 1.8 {
         Color::new(255,0,0,200)
     } else if fl_ht >= 1.0 {
@@ -42,8 +48,11 @@ pub fn main() {
         Color::new(0,255,0,200)
     };
 
-    let mesh0 = cuboid(2.0, 2.0, 2.0);
-    let mesh1 = cuboid(fl_ht, 2.0, 2.0);
+    // let mesh0 = cube(2.0, 2.0);
+    // let mesh1 = cube(fl_ht, 2.0);
+
+    let mesh0 = cuboid(2.0, 1.0, 3.0);
+    let mesh1 = cuboid(fl_ht, 1.0, 3.0);
 
     let mut one_mesh = Gm::new(
         Mesh::new(&context, &mesh0),

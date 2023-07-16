@@ -1,5 +1,6 @@
 use three_d::*;
 
+#[allow(dead_code)]
 pub fn cube(ht: f32, wt: f32) -> CpuMesh {
     let height = ht;
     let width = wt;
