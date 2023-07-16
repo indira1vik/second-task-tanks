@@ -33,7 +33,18 @@ pub fn main() {
 
     let mut control = OrbitControl::new(*camera.target(), 1.0, 100.0);
 
+    let fl_ht = 1.2;
+    let choose = if fl_ht >= 1.8 {
+        Color::new(255,0,0,200)
+    } else if fl_ht >= 1.0 {
+        Color::new(255,165,0,200)
+    } else {
+        Color::new(0,255,0,200)
+    };
+
     let mesh0 = cuboid(2.0, 2.0, 2.0);
+    let mesh1 = cuboid(fl_ht, 2.0, 2.0);
+
     let mut one_mesh = Gm::new(
         Mesh::new(&context, &mesh0),
         PhysicalMaterial::new_transparent(
@@ -49,20 +60,6 @@ pub fn main() {
             },
         ),
     );
-    one_mesh.set_animation(|time| Mat4::from_angle_y(radians(time * 0.0002)));
-    one_mesh.set_transformation(Mat4::from_scale(1.0));
-
-    let fl_ht = 1.2;
-
-    let choose = if fl_ht >= 1.8 {
-        Color::new(255,0,0,200)
-    } else if fl_ht >= 1.0 {
-        Color::new(255,165,0,200)
-    } else {
-        Color::new(0,255,0,200)
-    };
-
-    let mesh1 = cuboid(fl_ht, 2.0, 2.0);
     let mut two_mesh = Gm::new(
         Mesh::new(&context, &mesh1),
         PhysicalMaterial::new_transparent(
@@ -73,6 +70,9 @@ pub fn main() {
             },
         ),
     );
+
+    one_mesh.set_animation(|time| Mat4::from_angle_y(radians(time * 0.0002)));
+    one_mesh.set_transformation(Mat4::from_scale(1.0));
     two_mesh.set_animation(|time| Mat4::from_angle_y(radians(time * 0.0002)));
     two_mesh.set_transformation(
         Mat4::from_translation(vec3(0.0, -1.0 + fl_ht / 2.0, 0.0)) * Mat4::from_scale(1.0),
